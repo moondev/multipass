@@ -55,7 +55,7 @@ std::string server_name_from(const std::string& server_address)
 
 mp::DaemonConfig::~DaemonConfig()
 {
-    mpl::set_logger(nullptr);
+    // mpl::set_logger(nullptr); // GERRY - why? This breaks categorized logging on shutdown...
 }
 
 std::unique_ptr<const mp::DaemonConfig> mp::DaemonConfigBuilder::build()
